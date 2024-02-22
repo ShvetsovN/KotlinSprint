@@ -1,4 +1,6 @@
 fun main() {
-    val totalNumberOfOrders : Int = 75
-    val thankYouText : String = "Благодарим за покупку в нашем магазине!"
+    // var - потому что количество заказов должно меняться.
+    // UInt потому что количество заказов не может быть отрицательным.
+    var totalNumberOfOrders: UInt = 75u
+    val thankYouText: String = "Благодарим за покупку в нашем магазине!"
 }
