@@ -1,6 +1,5 @@
-package org.example
-
-fun main() {
-    println("Hello!")
-
-}
+//package org.example.lesson_1
+//
+//fun main() {
+//
+//}
