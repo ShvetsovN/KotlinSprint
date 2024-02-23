@@ -5,10 +5,10 @@ fun main() {
     var hour = 9
     var minute = 7
     println(year)
-    println(hour)
-    println(minute)
+    println("%02d".format(hour))
+    println("%02d".format(minute))
 
     hour = 10
     minute = 55
-    print("$hour:$minute")
+    print("%02d".format(hour)+ ':'+ "%02d".format(minute))
 }
