@@ -16,6 +16,7 @@ fun main() {
 
     val averageSalary = allEmployeesSalary / (PERMANENT_EMPLOYEES + EMPLOYEES_INTERNS)
     println("Средняя ЗП одного сотрудника в среднем - $averageSalary рублей")
+
 }
 
 
