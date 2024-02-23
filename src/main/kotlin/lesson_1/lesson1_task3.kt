@@ -10,5 +10,5 @@ fun main() {
 
     hour = 10
     minute = 55
-    print("%02d".format(hour)+ ':'+ "%02d".format(minute))
+    print("%02d".format(hour) + ':' + "%02d".format(minute))
 }
