@@ -1,10 +1,10 @@
 package org.example.lesson_1.lesson_4
 
-fun main() {
+const val WEIGHT_MIN = 35
+const val WEIGHT_MAX = 100
+const val PERMISSION_VOLUME = 100
 
-    val weightMin = 35
-    val weightMax = 100
-    val permissibleVolume = 100
+fun main() {
 
     val cargoWeightOne = 20
     val cargoVolumeOne = 80
@@ -15,16 +15,16 @@ fun main() {
     println(
         "Груз с весом $cargoWeightOne и объемом $cargoVolumeOne соответствует " +
                 "категории 'Average':${
-                    (cargoWeightOne >= weightMin) && (cargoWeightOne <= weightMax)
-                            && (cargoVolumeOne <= permissibleVolume)
+                    (cargoWeightOne >= WEIGHT_MIN) && (cargoWeightOne <= WEIGHT_MAX)
+                            && (cargoVolumeOne <= PERMISSION_VOLUME)
                 }"
     )
 
     println(
         "Груз с весом $cargoWeightTwo и объемом $cargoVolumeTwo соответствует " +
                 "категории 'Average':${
-                    (cargoWeightTwo >= weightMin) && (cargoWeightTwo <= weightMax)
-                            && (cargoVolumeTwo <= permissibleVolume)
+                    (cargoWeightTwo >= WEIGHT_MIN) && (cargoWeightTwo <= WEIGHT_MAX)
+                            && (cargoVolumeTwo <= PERMISSION_VOLUME)
                 }"
     )
 
