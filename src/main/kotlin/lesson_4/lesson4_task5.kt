@@ -1,9 +1,13 @@
 package org.example.lesson_1.lesson_4
 
+const val PEOPLE_ON_BOARD_MIN = 55
+const val PEOPLE_ON_BOARD_MAX = 70
+const val BOXES_OF_PROVISION = 50
+
 fun main() {
 
     println("Корбаль имеет повреждения?")
-    val shipDamage: Boolean = readln().toBoolean()
+    val isShipDamage: Boolean = readln().toBoolean()
 
     println("Число экипажа?")
     val peopleOnBoard: Int = readln().toInt()
@@ -12,11 +16,13 @@ fun main() {
     val boxesOfProvision: Int = readln().toInt()
 
     println("Погодные условия благоприятны или нет?")
-    val weatherCondition: Boolean = readln().toBoolean()
+    val isGoodWeather: Boolean = readln().toBoolean()
 
     val swimming: Boolean =
-        (!shipDamage && (peopleOnBoard >= 55 && peopleOnBoard <= 70) && (boxesOfProvision >= 50) && weatherCondition)
-                || (shipDamage && peopleOnBoard == 70 && boxesOfProvision >= 50 && weatherCondition)
+        (!isShipDamage && (peopleOnBoard >= PEOPLE_ON_BOARD_MIN && peopleOnBoard <= PEOPLE_ON_BOARD_MAX) &&
+                (boxesOfProvision >= BOXES_OF_PROVISION) && isGoodWeather) ||
+                (isShipDamage && peopleOnBoard == PEOPLE_ON_BOARD_MAX && boxesOfProvision >= BOXES_OF_PROVISION &&
+                        isGoodWeather)
 
     println("Плывем или нет? - $swimming")
 }
