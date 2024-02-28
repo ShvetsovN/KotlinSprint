@@ -31,11 +31,12 @@ fun main() {
     println("Вы ввели число: $numberTwo")
 
     val result = when {
-        (numberOne == WINNING_NUMBER_ONE && numberTwo == WINNING_NUMBER_TWO)
-                || (numberOne == WINNING_NUMBER_TWO && numberTwo == WINNING_NUMBER_ONE) -> "Вы выиграли главный приз!"
+        numberOne == WINNING_NUMBER_ONE && numberTwo == WINNING_NUMBER_TWO ||
+                numberOne == WINNING_NUMBER_TWO && numberTwo == WINNING_NUMBER_ONE -> "Вы выиграли главный приз!"
 
-        (numberOne == WINNING_NUMBER_ONE || numberTwo == WINNING_NUMBER_TWO)
-                || (numberOne == WINNING_NUMBER_TWO || numberTwo == WINNING_NUMBER_ONE) -> "Вы выиграли утешительный приз! \nВыиграшные числа это $WINNING_NUMBER_ONE и $WINNING_NUMBER_TWO"
+        numberOne == WINNING_NUMBER_ONE || numberTwo == WINNING_NUMBER_TWO ||
+                numberOne == WINNING_NUMBER_TWO || numberTwo == WINNING_NUMBER_ONE -> "Вы выиграли утешительный приз! \n" +
+                "Выиграшные числа это $WINNING_NUMBER_ONE и $WINNING_NUMBER_TWO"
 
         else -> "Неудача! \nВыиграшные числа это $WINNING_NUMBER_ONE и $WINNING_NUMBER_TWO"
     }
