@@ -3,14 +3,9 @@ package org.example.lesson_1.lesson_6
 fun main() {
 
     println("Введите количество секунд таймера: ")
-    var counter = readln().toInt()
-    val enteredSeconds = counter
+    val counter = readln().toLong()
 
-    while (counter > 0) {
-        Thread.sleep(1000)
-        counter--
-    }
-
-    println("Прошло $enteredSeconds секунд")
+    Thread.sleep(counter * 1000)
+    println("Прошло $counter секунд")
 
 }
