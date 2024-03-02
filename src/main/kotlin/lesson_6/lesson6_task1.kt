@@ -2,8 +2,6 @@ package org.example.lesson_1.lesson_6
 
 fun main() {
 
-    var isAuthorization = true
-
     println("Задайте логин: ")
     val userName = readln()
 
@@ -12,20 +10,19 @@ fun main() {
 
     println("Регистрация пройдена, введите еще раз логин и пароль для подтверждения: ")
 
-    while (isAuthorization) {
+    do {
         println("Введите логин для авторизации: ")
         val userRegistrationName = readln()
         println("Введите пароль для авторизации: ")
         val userRegistrationPassword = readln()
-        when {
-            userRegistrationPassword == userPassword &&
-                    userRegistrationName == userName -> isAuthorization = false
 
-            else -> {
-                println("Вы ввели не верные данные")
-                isAuthorization = true
-            }
+        when {
+            userRegistrationPassword != userPassword ||
+                    userRegistrationName != userName -> println("Вы ввели не верные данные")
+
+            else -> println("Авторизация прошла успешно")
         }
-    }
-    println("Авторизация прошла успешно")
+
+    } while (userRegistrationPassword != userPassword && userRegistrationName != userName)
+
 }
