@@ -1,36 +1,26 @@
 package org.example.lesson_1.lesson_6
 
-import kotlin.random.Random
-
 fun main() {
 
     var counter65 = 3
 
-    println("Решите уравнение и докажите что вы не бот: ")
-
+    println("Решите уравнение и докажите что вы не бот.")
     while (counter65 > 0) {
-        val secretNumber = Random.nextInt(0, 100)
-        println("Введите 2 числа чтобы сумма была равна: $secretNumber")
-        println("Введите 1 число: ")
-        val numberOne65 = readln().toInt()
-        println("Введите 2 число: ")
-        val numberTwo65 = readln().toInt()
+        val secretNumber = (1..9).random()
+        println("Введите два числа что их сумма была равна: $secretNumber. Количество попыток: $counter65")
 
-        when {
-            numberOne65 + numberTwo65 == secretNumber -> {
-                counter65 = 0
-                println("Добро пожаловать!")
-            }
+        println("Введите первое число: ")
+        val userInputOne = readln().toInt()
 
-            else -> {
-                if(counter65 == 3 || counter65 == 2) {
-                    counter65--
-                    println("Попробуйте еще раз. Осталось $counter65 попыток")
-                } else if (counter65 == 1) {
-                    counter65 = 0
-                    println("Осталось $counter65 попыток. Доступ запрещен")
-                }
-            }
-        }
+        println("Введите второе число: ")
+        val userInputTwo = readln().toInt()
+
+        if ((userInputOne + userInputTwo) == secretNumber) {
+            println("Добро пожаловать!")
+            return
+        } else println("Попробуйте еще раз, у вас осталось ${--counter65} попыток")
     }
+
+    println("Доступ запрещен")
+
 }
