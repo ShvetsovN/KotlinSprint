@@ -1,19 +1,22 @@
 package org.example.lesson_1.lesson_7
 
-import kotlin.random.Random
+fun main() {
 
-fun main(){
+    val digitRange = 1000..9999
 
     do {
-        val autorizationCode = Random.nextInt(1000,9999)
+        val autorizationCode = digitRange.random()
+
         println("Ваш код авторизации $autorizationCode")
+
         println("Введите полученный ранее код: ")
+
         val isCodeConfirmation: Boolean
-        if(readln().toInt() == autorizationCode) {
+
+        if (readln().toInt() == autorizationCode) {
             isCodeConfirmation = false
             println("Добро пожаловать!")
-        }
-        else {
+        } else {
             isCodeConfirmation = true
             println("Попробуйте еще раз")
         }
