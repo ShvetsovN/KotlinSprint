@@ -4,6 +4,7 @@ fun main() {
 
     val arrayOfIngredientsForBagel = arrayOf("flour", "sugar", "water", "oil", "salt")
 
+    println("Какой ингредиент мы ищем?")
     val lookingForIngredients = readln()
 
     for (i in arrayOfIngredientsForBagel) {
