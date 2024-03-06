@@ -5,19 +5,22 @@ fun main() {
     val listOfIngredients = mutableListOf("яйца", "молоко", "хрен")
 
     println("В рецепте есть базовые ингредиенты: $listOfIngredients")
+    println("Желаете добавить что-то еще?")
 
-    do {
-        println("Желаете добавить что-то еще?")
+    val userInput = readln()
 
-        val userInput = readln()
-        if (userInput == "да") {
-            println("Какой ингредиент хотите добавить?")
+    while (userInput.equals("да", true)) {
 
-            val newIngredients = readln()
-            listOfIngredients.add(newIngredients)
+        println("Какой ингредиент хотите добавить?")
 
-            println(listOfIngredients)
-        }
-    } while (userInput != "нет")
+        val newIngredients = readln()
+        listOfIngredients.add(newIngredients)
 
+        println("Теперь в рецепте есть следющие ингредиенты: $listOfIngredients")
+        return
+    }
 }
+
+
+
+
