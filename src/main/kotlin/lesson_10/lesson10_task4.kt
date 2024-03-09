@@ -7,8 +7,8 @@ fun main() {
     println("Добро пожаловать в игру \"Кости\"")
 
     do {
-        val computerDiceRoll = rollTheDice()
-        val humanDiceRoll = rollTheDice()
+        val computerDiceRoll = rollTheDice2()
+        val humanDiceRoll = rollTheDice2()
 
         println("Бросает человек! Выпало число: $humanDiceRoll")
         println("Бросают машины! Выпало число: $computerDiceRoll")
@@ -29,16 +29,17 @@ fun main() {
 
 }
 
-fun rollTheDice() = (1..6).random()
+fun rollTheDice2() = (1..6).random()
 
 fun holdARound(counter: Int): Boolean {
     var isContinue = true
     val userInput = readln()
     if (userInput.equals("да", true)) {
-        rollTheDice()
+        rollTheDice2()
     } else {
         isContinue = false
         println("Игра окончена, человечество победило $counter раз. Поздравляем!")
     }
     return isContinue
 }
+
