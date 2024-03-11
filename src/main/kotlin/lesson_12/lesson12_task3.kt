@@ -5,15 +5,17 @@ fun main() {
     weatherTracker5.weatherOutput()
 }
 
-class WeatherTracker3(daytimeTemperature: Int, nightTemperature: Int, isPrecipitation: Boolean,) {
+class WeatherTracker3(daytimeTemperature: Int, nightTemperature: Int, isPrecipitation: Boolean) {
 
-    val daytimeTemperature = daytimeTemperature
-    val nightTemperature = nightTemperature
+    val daytimeTemperature = (daytimeTemperature - 273.15).toInt()
+    val nightTemperature = (nightTemperature - 273.15).toInt()
     val isPrecipitation = isPrecipitation
 
     fun weatherOutput() {
-        println("Погода днём: ${(daytimeTemperature - 273.15).toInt()}, погода ночью: ${(nightTemperature - 273.15).toInt()}, " +
-                "наличие осадков: $isPrecipitation")
+        println(
+            "Погода днём: $daytimeTemperature, погода ночью: $nightTemperature, " +
+                    "наличие осадков: $isPrecipitation"
+        )
     }
 
 }
