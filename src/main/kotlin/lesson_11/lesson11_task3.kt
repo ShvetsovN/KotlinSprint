@@ -2,7 +2,7 @@ package org.example.lesson_1.lesson_11
 
 fun main() {
 
-    val essense1 = Essense(
+    val user1 = User(
         nickname = "Мистер Пиклз",
         avatar = "Пикуль"
     )
@@ -12,26 +12,25 @@ fun main() {
         name = "Комната общения",
     )
 
-    someRoom1.userAdd(someRoom1, essense1)
-    someRoom1.updateStatus(essense1)
-    someRoom1.infoUsers(essense1)
+    someRoom1.userAdd(someRoom1, user1)
+    someRoom1.updateStatus(user1)
+    someRoom1.infoUsers(user1)
 
 }
 
-class Essense(
+class User(
     val nickname: String,
     var status: String = "пользователь заглушен",
     val avatar: String,
-) {
-}
+)
 
 class SomeRoom(
     val cover: String,
     val name: String,
-    val listOfUsers: HashSet<String> = hashSetOf(),
+    val listOfUsers: MutableList<String> = mutableListOf(),
 ) {
 
-    fun userAdd(room: SomeRoom, user: Essense) {
+    fun userAdd(room: SomeRoom, user: User) {
         println("Добро пожаловать ${user.nickname}! ")
         listOfUsers.add(user.nickname)
         println(
@@ -39,7 +38,7 @@ class SomeRoom(
         )
     }
 
-    fun updateStatus(user: Essense) {
+    fun updateStatus(user: User) {
         println("Ваш статус: ${user.status}")
         println(
             """Выберите желаемый статус: 
@@ -65,7 +64,7 @@ class SomeRoom(
         }
     }
 
-    fun infoUsers(user: Essense) {
+    fun infoUsers(user: User) {
         println("После 2х секундного нажатия на аватарку выводиться сообщение: \n" +
                 "Имя пользователя: ${user.nickname}, статус: ${user.status}, аватар: ${user.avatar}")
     }
