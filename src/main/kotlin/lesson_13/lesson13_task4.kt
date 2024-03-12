@@ -5,13 +5,14 @@ fun main() {
 
     do {
         println("Укажите имя: ")
-        val name = readln()
+        val name = readLine()
 
         println("Укажите номер телефона: ")
         val phoneNumber = readLine()?.toLongOrNull()
 
         println("Укажите название компании: ")
-        val companyName = readLine()
+        var companyName = readLine()
+        if(companyName?.isEmpty() == true) companyName = null
 
         if (phoneNumber != null) contactList.add(Contacts4(name, phoneNumber, companyName))
         else println("Вы не указали номер телефона")
@@ -25,7 +26,7 @@ fun main() {
 }
 
 class Contacts4(
-    val name: String,
+    val name: String?,
     val phoneNumber: Long?,
     val companyName: String?,
 ) {
