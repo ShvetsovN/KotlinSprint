@@ -27,14 +27,14 @@ class User(
 class SomeRoom(
     val cover: String,
     val name: String,
-    val listOfUsers: MutableList<String> = mutableListOf(),
+    val listOfUsers: MutableList<User> = mutableListOf(),
 ) {
 
     fun userAdd(room: SomeRoom, user: User) {
         println("Добро пожаловать ${user.nickname}! ")
-        listOfUsers.add(user.nickname)
+        listOfUsers.add(user)
         println(
-            "В комнате \"${room.cover}\", c названием \"${room.name}\" теперь ${room.listOfUsers}!"
+            "В комнате \"${room.cover}\", c названием \"${room.name}\" теперь ${room.listOfUsers.joinToString{it.nickname} }!"
         )
     }
 
