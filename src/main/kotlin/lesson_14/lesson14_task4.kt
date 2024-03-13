@@ -6,7 +6,7 @@ fun main() {
     val daymos = Satellite("Деймос")
     val mars = Planet("Марс", listOf(fobos, daymos))
 
-    println("Впереди планета ${mars.name}! У неё ${mars.satellites.size} спутника: ${mars.satellites[0].name} и ${mars.satellites[1].name}.")
+    println("Впереди планета ${mars.name}! У неё ${mars.satellites.size} спутника: ${mars.satellites.joinToString {it.name}}.")
 
 }
 
