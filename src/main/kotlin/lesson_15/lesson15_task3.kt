@@ -52,6 +52,7 @@ class Administrator1531(
 
     fun deleteMessage() {
         println("Админ удаляет сообщение")
+        Thread.sleep(1000)
     }
 
     fun deleteUser(admin: Administrator1531, user: User1531) {
