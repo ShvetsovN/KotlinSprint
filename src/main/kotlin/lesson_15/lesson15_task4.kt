@@ -1,6 +1,6 @@
 package org.example.lesson_1.lesson_15
 
-fun main(){
+fun main() {
 
     val musicalInstrument1541 = MusicalInstrument("Violin", 5)
     val component1541 = Component("Violin Strings", 15)
@@ -10,21 +10,20 @@ fun main(){
     musicalInstrument1541.search(component1542, musicalInstrument1541)
 
 }
-class MusicalInstrument(
-    val name: String,
-    val numbers: Int,
 
-) : Search
+interface InstrumentOrComponent {
+    val name: String
+    val number: Int
+}
 
-class Component(
-    val name: String,
-    val numbers: Int,
-)
+class MusicalInstrument(override val name: String, override val number: Int,) : InstrumentOrComponent, Search
 
-interface Search {
-    fun search(component: Component, musicalInstrument: MusicalInstrument){
+class Component(override val name: String, override val number: Int,) : InstrumentOrComponent
+
+interface Search : {
+    fun search(component: Component) {
         println("Выполняется поиск")
-        if(component.name.contains(musicalInstrument.name)) println("На складе осталось ${component.numbers} ед.")
+        if (component.name.contains(this.name)) println("На складе осталось ${component.number} ед.")
         else println("Совпадений не найдено")
     }
 }
