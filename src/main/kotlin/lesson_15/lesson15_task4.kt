@@ -6,24 +6,32 @@ fun main() {
     val component1541 = Component("Violin Strings", 15)
     val component1542 = Component("Guitar Strings", 17)
 
-    musicalInstrument1541.search(component1541, musicalInstrument1541)
-    musicalInstrument1541.search(component1542, musicalInstrument1541)
+    musicalInstrument1541.search(component1541)
+    musicalInstrument1541.search(component1542)
 
 }
 
-interface InstrumentOrComponent {
+interface InstrumentOrComponent{
     val name: String
     val number: Int
 }
 
-class MusicalInstrument(override val name: String, override val number: Int,) : InstrumentOrComponent, Search
-
-class Component(override val name: String, override val number: Int,) : InstrumentOrComponent
-
-interface Search : {
-    fun search(component: Component) {
+class MusicalInstrument(
+    override val name: String,
+    override val number: Int,
+) : InstrumentOrComponent, Search {
+    override fun search(component: Component) {
         println("Выполняется поиск")
         if (component.name.contains(this.name)) println("На складе осталось ${component.number} ед.")
         else println("Совпадений не найдено")
     }
+}
+
+class Component(
+    override val name: String,
+    override val number: Int,
+) : InstrumentOrComponent
+
+interface Search {
+    fun search(component: Component)
 }
