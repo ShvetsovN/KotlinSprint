@@ -4,7 +4,7 @@ fun main() {
 
     val order164 = Order164(12)
     println("Статус заказа: ${order164.getStatus()}")
-    order164.manager("Готов")
+    order164.requestStatusChange("Готов")
     println("Статус заказа: ${order164.getStatus()}")
 
 }
@@ -15,7 +15,11 @@ class Order164(
 ) {
     fun getStatus(): String = status
 
-    fun manager(newStatus: String) {
+    fun requestStatusChange(newStatus: String){
+        updateStatus(newStatus)
+    }
+
+    private fun updateStatus(newStatus: String) {
         status = newStatus
     }
 }
