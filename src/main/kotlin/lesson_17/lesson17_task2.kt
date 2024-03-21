@@ -1,33 +1,40 @@
 package org.example.lesson_1.lesson_17
 
-fun main(){
+fun main() {
 
     val ship1721 = Ship172("Утюг", 15, "Инсмут")
-    println(ship1721.getName())
+    println(ship1721.name)
+    ship1721.name = "Топор"
+    println(ship1721.name)
 
-    ship1721.setName("Топор")
-    println(ship1721.getName())
+    println(ship1721.homePort)
+    ship1721.homePort = "Нью Гемпшир"
+    println(ship1721.homePort)
 
 }
 
 class Ship172(
-    private val name: String,
-    private var averageSpeed: Int,
-    private var homePort: String,
+    _name: String,
+    _averageSpeed: Int,
+    _homePort: String,
 ) {
 
-    fun getName(): String = name
-    fun setName(newName : String) {
-        println("Изменить имя корабле невозможно")
-    }
+    var name: String = _name
+        get() = field
+        set(value) {
+            println("Изменить имя корабле невозможно")
+        }
 
-    fun getAverageSpeed(): Int = averageSpeed
-    fun setAverageSpeed(newSpeed: Int) {
-        averageSpeed = newSpeed
-    }
+    var averageSpeed: Int = _averageSpeed
+        get() = field
+        set(value) {
+            field = value
+        }
 
-    fun getHomePort() : String = homePort
-    fun setHomePort(newPort: String) {
-        homePort = newPort
-    }
+    var homePort = _homePort
+        get() = field
+        set(value) {
+            field = value
+        }
 }
+
