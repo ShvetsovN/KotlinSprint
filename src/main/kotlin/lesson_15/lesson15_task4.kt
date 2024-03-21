@@ -11,15 +11,15 @@ fun main() {
 
 }
 
-interface InstrumentOrComponent{
-    val name: String
-    val number: Int
-}
+open class InstrumentOrComponent(
+    val name: String,
+    val number: Int,
+)
 
 class MusicalInstrument(
-    override val name: String,
-    override val number: Int,
-) : InstrumentOrComponent, Search {
+    name: String,
+    number: Int,
+) : InstrumentOrComponent(name, number), Search {
     override fun search(component: Component) {
         println("Выполняется поиск")
         if (component.name.contains(this.name)) println("На складе осталось ${component.number} ед.")
@@ -28,9 +28,9 @@ class MusicalInstrument(
 }
 
 class Component(
-    override val name: String,
-    override val number: Int,
-) : InstrumentOrComponent
+    name: String,
+    number: Int,
+) : InstrumentOrComponent(name, number)
 
 interface Search {
     fun search(component: Component)
