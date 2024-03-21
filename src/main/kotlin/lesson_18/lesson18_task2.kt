@@ -2,15 +2,13 @@ package org.example.lesson_1.lesson_18
 
 fun main() {
 
-    val dice: Dice = FourFaceDice()
-    val dice2: Dice = SixFaceDice()
-    val dice3: Dice = EightFaceDice()
+    val fourFaceDice: Dice = FourFaceDice()
+    val sixFaceDice: Dice = SixFaceDice()
+    val eightFaceDice: Dice = EightFaceDice()
 
-    println(dice.throwADice())
-    println()
-    println(dice2.throwADice())
-    println()
-    println(dice3.throwADice())
+    val diceList: List<Dice> = listOf(fourFaceDice, sixFaceDice, eightFaceDice)
+
+    diceList.forEach { println(it.throwADice()) }
 
 }
 
