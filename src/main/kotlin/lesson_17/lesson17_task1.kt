@@ -1,18 +1,26 @@
 package org.example.lesson_1.lesson_17
 
-class QuizElement(
-    question: String,
-    answer: String,
-) {
-    private val _question: String = "Каков вопрос?"
-        val question: String
-        get() = _question
+fun main(){
 
-    private var _answer: String = "Таков ответ"
-        var answer: String
-        get() = _answer
+    val quiz = QuizElement("Каков", "Ответ")
+    println(quiz.question)
+    println(quiz.answer)
+    quiz.answer = "Да"
+    println(quiz.answer)
+
+}
+
+class QuizElement(
+    _question: String,
+    _answer: String,
+) {
+    val question: String = _question
+        get() = field
+
+    var answer: String = _answer
+        get() = field
         set(value) {
-            _answer = value
+            field = value
         }
 
 }
