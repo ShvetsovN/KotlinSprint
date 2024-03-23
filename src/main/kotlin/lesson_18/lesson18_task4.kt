@@ -1,10 +1,10 @@
 package org.example.lesson_1.lesson_18
 
-fun main(){
+fun main() {
 
     val box184 = Box184()
     println(box184.calculateArea(5))
-    println(box184.calculateArea(5,6,2))
+    println(box184.calculateArea(5, 6, 2))
 
 }
 
