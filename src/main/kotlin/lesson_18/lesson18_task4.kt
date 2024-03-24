@@ -2,27 +2,34 @@ package org.example.lesson_1.lesson_18
 
 fun main() {
 
-    val box184 = Box184()
-    println(box184.calculateArea(5))
-    println(box184.calculateArea(5, 6, 2))
+    val boxCubic184 = BoxCubic184(5)
+    val boxRectangular184 = BoxRectangular184(5, 2, 4)
+    println(boxCubic184.calculateArea())
+    println(boxRectangular184.calculateArea())
 
 }
 
-class Box184 {
-
-    fun calculateArea(
-        length: Int,
-    ): Int {
+class BoxCubic184(
+    private val length: Int,
+) : Parcel() {
+    override fun calculateArea(): Int {
         println("Коробка кубическая. Площадь: ")
         return (6 * length * length)
     }
+}
 
-    fun calculateArea(
-        length: Int,
-        width: Int,
-        height: Int,
+class BoxRectangular184(
+    private val length: Int,
+    private val width: Int,
+    private val height: Int,
+) : Parcel() {
+    override fun calculateArea(
     ): Int {
         println("Коробка параллелепипед. Площадь: ")
         return (2 * length * width + length * height + width * height)
     }
+}
+
+abstract class Parcel {
+    abstract fun calculateArea(): Int
 }
