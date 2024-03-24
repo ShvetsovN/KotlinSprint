@@ -23,57 +23,28 @@ fun main() {
 }
 
 abstract class Animal(
-    name: String,
+    private val name: String,
 ) {
-    abstract fun eat(food: String)
-    abstract fun play()
-    abstract fun sleep()
+    fun eat(food: String) {
+        println("$name ест $food")
+    }
+    fun play() {
+        println("$name - играет")
+    }
+    fun sleep() {
+        println("$name - спит")
+    }
 }
 
 class Fox(
     private val name: String,
-) : Animal(name) {
-    override fun eat(food: String) {
-        println("$name ест $food")
-    }
-
-    override fun play() {
-        println("$name - играет")
-    }
-
-    override fun sleep() {
-        println("$name - спит")
-    }
-}
+) : Animal(name)
 
 class Dog(
     private val name: String,
-) : Animal(name) {
-    override fun eat(food: String) {
-        println("$name ест $food")
-    }
-
-    override fun play() {
-        println("$name - играет")
-    }
-
-    override fun sleep() {
-        println("$name - спит")
-    }
-}
+) : Animal(name)
 
 class Cat(
     private val name: String,
-) : Animal(name) {
-    override fun eat(food: String) {
-        println("$name ест $food")
-    }
+) : Animal(name)
 
-    override fun play() {
-        println("$name - играет")
-    }
-
-    override fun sleep() {
-        println("$name - спит")
-    }
-}
