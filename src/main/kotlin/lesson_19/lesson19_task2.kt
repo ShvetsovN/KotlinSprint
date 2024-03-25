@@ -1,6 +1,6 @@
 package org.example.lesson_1.lesson_19
 
-fun main(){
+fun main() {
 
     val product1921 = Product192("Сюртук", 1, Category.CLOTH)
     product1921.aboutProduct()
@@ -10,24 +10,19 @@ fun main(){
 
 }
 
-enum class Category{
-    CLOTH {
-        override fun getNameOfCategory(): String {
-            return "Одежда"
-        }
-    },
-    STATIONERY {
-        override fun getNameOfCategory(): String {
-            return "Канцелярские товары"
-        }
-    },
-    MISCELLANEOUS {
-        override fun getNameOfCategory(): String {
-            return "Разное"
-        }
-    };
+enum class Category {
+    CLOTH,
+    STATIONERY,
+    MISCELLANEOUS,
+    ;
 
-    abstract fun getNameOfCategory() : String
+    fun getNameOfCategory(): String {
+        return when (this) {
+            CLOTH -> "Одежда"
+            STATIONERY -> "Канцелярские товары"
+            else -> "Разное"
+        }
+    }
 }
 
 class Product192(
@@ -36,11 +31,8 @@ class Product192(
     private val category: Category,
 ) {
     fun aboutProduct() {
-        when(category) {
-            Category.CLOTH -> println("Название $name\nID: $id\nКатегория: ${category.getNameOfCategory()}\n")
-            Category.STATIONERY -> println("Название $name\nID: $id\nКатегория: ${category.getNameOfCategory()}\n")
-            Category.MISCELLANEOUS -> println("Название $name\nID: $id\nКатегория: ${category.getNameOfCategory()}\n")
-        }
+        println("Название $name\nID: $id\nКатегория: ${category.getNameOfCategory()}\n")
     }
 }
+
 
