@@ -1,20 +1,19 @@
 package org.example.lesson_1.lesson_22
 
 fun main() {
-    val viewModel = ViewModel()
+    val viewModel = MainScreenViewModel()
 
     viewModel.loadData()
-
 }
 
-data class MainScreenState(
-    var data: String ="Отсутствие данных",
-    var isLoading: Boolean = false,
-)
+class MainScreenViewModel {
+    data class MainScreenState(
+        var data: String = "Отсутствие данных",
+        var isLoading: Boolean = false,
+    )
 
-class ViewModel(
-    var mainScreenState: MainScreenState = MainScreenState(),
-){
+    private var mainScreenState: MainScreenState = MainScreenState()
+
     fun loadData() {
         println("Данные: ${mainScreenState.data}")
         println("Состояние загрузки: ${mainScreenState.isLoading}\n")
@@ -32,3 +31,4 @@ class ViewModel(
         println("Состояние загрузки: ${mainScreenState.isLoading}")
     }
 }
+
